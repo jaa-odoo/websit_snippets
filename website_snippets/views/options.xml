@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Your Snippet">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/website_snippets/static/src/scss/custom.scss" type="text/scss" />
+        </xpath>
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/website_snippets/static/src/js/custom.js"></script>
+        </xpath>
+    </template>
+    <template id="snippet_testimonial_opt" name="Snippet Testimonial Options" inherit_id="website.snippet_options">
+        <xpath expr="//div[@data-js='background']" position="after">
+            <div data-selector=".snippet_testimonial">
+                <we-collapse-area>
+                    <we-toggler><i class="fa fa-fw fa-arrows-v" /> Your Option</we-toggler>
+                    <we-collapse>
+                        <we-button data-select-class="opt_shadow">Shadow Images</we-button>
+                        <we-button data-select-class="opt_grey_bg">Grey Bg</we-button>
+                        <we-button data-select-class="">None</we-button>
+                        <we-divider />
+                    </we-collapse>
+                </we-collapse-area>
+            </div>
+            <div data-js="snippet_testimonial_options" data-selector=".snippet_testimonial">
+            </div>
+        </xpath>
+    </template>
+</odoo>
